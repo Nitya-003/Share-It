@@ -115,11 +115,6 @@ Secure-File-Sharing-System/
 
 This project is being developed by a team of four engineering students as part of a full-stack development initiative.
 
-Team Members:
-
-* Saakshat Chandratre – Backend Development Lead
-* Nirmal Arsade – Front End and UI/UX Design
-
 ## License
 
 This project is open-source and licensed under the MIT License.
