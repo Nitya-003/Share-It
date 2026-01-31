@@ -85,21 +85,31 @@ The backend will run at: [http://localhost:5000](http://localhost:5000)
 
 ```
 Secure-File-Sharing-System/
-├── backend/
-│   ├── controllers/
-│   ├── routes/
-│   ├── models/
-│   ├── middleware/
-│   ├── .env
-│   └── server.js
-├── frontend/
+├── backend/                      # Backend Node.js/Express server
+│   ├── controllers/              # Request handlers
+│   ├── routes/                   # API route definitions
+│   ├── models/                   # MongoDB/Mongoose models
+│   │   ├── File.js              # File metadata model
+│   │   └── User.js              # User/Admin model
+│   ├── middleware/              # Custom middleware
+│   │   └── auth.js              # Authentication & authorization
+│   ├── uploads/                 # Uploaded files storage
+│   ├── .env.example             # Environment variables template
+│   ├── package.json            # Backend dependencies
+│   └── server.js               # Server entry point
+│
+├── frontend/                    # React TypeScript frontend
 │   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── App.tsx
-│   └── vite.config.ts
-└── README.md
+│   │   ├── components/         # Reusable React components
+│   │   ├── pages/              # Page components
+│   │   ├── services/           # API service layer
+│   │   └── assets/             # Static assets (CSS, images)
+│   ├── index.html              # HTML template
+│   ├── package.json            # Frontend dependencies
+│   └── vite.config.ts          # Vite bundler configuration
+│
+├── README.md                    # Project documentation
+└── PROJECT_STRUCTURE.md         # Detailed structure guide
 ```
 
 ## How It Works
