@@ -1,130 +1,137 @@
-## Share-IT : Secure File Sharing System
+# 📁 Share-IT: Secure File Sharing System
 
-A secure and scalable full-stack web application that allows users to upload, store, and share files through time-bound and optionally password-protected links. The platform supports file metadata tracking and includes an admin dashboard for managing uploaded content.
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
+![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-## Project Overview
+Share-IT is a secure, scalable full-stack web application designed for internal organizational use. It allows users to upload and share files via unique, time-bound, and password-protected links.
 
-This system is designed for internal organizational use, enabling teams to securely exchange files with controlled access. The application is built using modern technologies and follows a modular, component-based architecture for maintainability and future expansion.
+---
 
-## Features
+## 🚀 Key Features
+* **Secure Uploads:** Multi-format validation with size limits.
+* **Time-Bound Links:** Links automatically expire after a set duration.
+* **Shielded Sharing:** Optional AES-encrypted password protection.
+* **Admin Control:** Full dashboard to monitor file traffic and manage storage.
+* **Auth System:** Secure JWT-based authentication for administrative tasks.
 
-- File upload with type and size validation
-- Unique, expiring download links
-- Optional password protection for shared files
-- File metadata storage (name, size, type, upload timestamp)
-- Download history and usage tracking
-- Admin dashboard for managing uploads and monitoring usage
-- JWT-based authentication system for admins
+---
 
-## Technology Stack
+## 🌟 Why Share-IT? 
+In an era of data breaches, relying on public cloud links or unencrypted email attachments is a risk. Share-IT is necessary because it provides:
+1. **Corporate Confidentiality:** Ideal for HR or Legal departments to share sensitive documents (contracts, payroll) that must "vanish" after 24 hours.
+2. **Reduced Storage Bloat:** Since links are time-bound, the system automatically encourages a "clean-as-you-go" storage policy, preventing servers from filling up with old files.
+3. **Internal Security:** Avoids "Shadow IT" (employees using personal Dropbox/WeTransfer) by providing a controlled, audited internal alternative.
+4. **Developer Collaboration:** Securely share .env templates or configuration files across team members with password protection.
 
-Frontend:
-- React.js
-- Vite
-- TypeScript (TSX)
-- Axios
+---
 
-Backend:
-- Node.js
-- Express
-- Multer
-- JWT
-- CORS
+## 🛠️ Technology Stack
+| Frontend | Backend | Database | Tools |
+|----------|---------|----------|-------|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="18"/> React.js + Vite | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="18"/> Node.js | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="18"/> MongoDB | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="18"/> Figma |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="18"/> TypeScript | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="18"/> Express | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongoose/mongoose-original.svg" width="18"/> Mongoose | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" width="18"/> Postman |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/axios/axios-plain.svg" width="18"/> Axios | Multer |  | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="18"/> Git / <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="18"/> GitHub |
 
-Database:
-- MongoDB (Mongoose)
+---
 
-Other Tools:
-- Git & GitHub
-- Figma (UI/UX design)
-- Postman (API testing)
-- Google Meet, WhatsApp (collaboration)
+## 🔄 System Flow 
+```mermaid
+graph TD
+    A[User Selects File] --> B{Validation}
+    B -- Type/Size OK --> C[Upload to Server]
+    B -- Invalid --> D[Error Message]
+    C --> E[Generate Unique Link]
+    E --> F[Set Expiry & Password]
+    F --> G[(Store in MongoDB)]
+    G --> H[Share Link with Recipient]
+    H --> I{Recipient Access}
+    I -- Password Required --> J[Verify Password]
+    I -- Direct Access --> K[Download File]
+    J -- Success --> K
+    K --> L[Update Download Stats]
+```
 
-## Installation Instructions
+---
 
-### Clone the repository
+## 📂 Project Structure
+<table>
+<tr>
+<th>Directory</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>
+<details>
+<summary><code>📂 backend/</code></summary>
+<ul>
+<li><code>📂 controllers/</code> - Request handling logic</li>
+<li><code>📂 models/</code> - Mongoose schemas (File, User)</li>
+<li><code>📂 routes/</code> - API endpoint definitions</li>
+<li><code>📂 middleware/</code> - Auth & Multer config</li>
+<li><code>📂 uploads/</code> - Physical file storage</li>
+<li><code>server.js</code> - Entry point</li>
+</ul>
+</details>
+</td>
+<td>Node.js & Express server-side logic</td>
+</tr>
+<tr>
+<td>
+<details>
+<summary><code>📂 frontend/</code></summary>
+<ul>
+<li><code>📂 src/components/</code> - Reusable UI elements</li>
+<li><code>📂 src/pages/</code> - View components</li>
+<li><code>📂 src/services/</code> - API integration</li>
+<li><code>vite.config.ts</code> - Build configuration</li>
+</ul>
+</details>
+</td>
+<td>React + TypeScript client application</td>
+</tr>
+</table>
 
+---
+
+## ⚙️ Quick Start
+**1. Clone & Install**
 ```bash
 git clone https://github.com/Secure-File-Sharing-System.git
-cd Secure-File-Sharing-System
-````
-
-### Backend Setup
-
-```bash
-cd backend
-npm install
+npm install # Run in both /frontend and /backend
 ```
 
-Create a `.env` file in the `backend` directory with the following content:
-
-```
+**2. Configure Environment (`backend/.env`)**
+```code snippet
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/secureFileDB
 JWT_SECRET=your_jwt_secret_key
 ```
 
-Start the backend server:
-
+**3. Launch**
 ```bash
-npm run dev
+# Start Backend
+cd backend && npm run dev
+
+# Start Frontend
+cd frontend && npm run dev
 ```
 
-### Frontend Setup
+---
 
-```bash
-cd ../frontend
-npm install
-npm run dev
-```
+## 🤝 Contributions
 
-The frontend will run at: [http://localhost:5173](http://localhost:5173)
-The backend will run at: [http://localhost:5000](http://localhost:5000)
+We welcome contributions from everyone! To keep the project healthy and safe, please refer to the following:
 
-## Folder Structure
+* **Contribution Guidelines:** Learn how to report bugs or submit features in [CONTRIBUTING.md](./CONTRIBUTING.md).
+* **Community Standards:** We follow a strict [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) to ensure a welcoming environment.
 
-```
-Secure-File-Sharing-System/
-├── backend/                      # Backend Node.js/Express server
-│   ├── controllers/              # Request handlers
-│   ├── routes/                   # API route definitions
-│   ├── models/                   # MongoDB/Mongoose models
-│   │   ├── File.js              # File metadata model
-│   │   └── User.js              # User/Admin model
-│   ├── middleware/              # Custom middleware
-│   │   └── auth.js              # Authentication & authorization
-│   ├── uploads/                 # Uploaded files storage
-│   ├── .env.example             # Environment variables template
-│   ├── package.json            # Backend dependencies
-│   └── server.js               # Server entry point
-│
-├── frontend/                    # React TypeScript frontend
-│   ├── src/
-│   │   ├── components/         # Reusable React components
-│   │   ├── pages/              # Page components
-│   │   ├── services/           # API service layer
-│   │   └── assets/             # Static assets (CSS, images)
-│   ├── index.html              # HTML template
-│   ├── package.json            # Frontend dependencies
-│   └── vite.config.ts          # Vite bundler configuration
-│
-├── README.md                    # Project documentation
-└── PROJECT_STRUCTURE.md         # Detailed structure guide
-```
+---
 
-## How It Works
+## ⚖️ License
 
-1. Users upload files via the frontend interface.
-2. Files are validated and stored securely on the server.
-3. A unique, expiring download link is generated and returned to the user.
-4. Optional password protection can be applied to the link.
-5. Admin users can log in to a dedicated dashboard to view, manage, or delete uploaded files.
-6. All actions are tracked and logged in the database for auditing and future enhancements.
+This project is licensed under the **GNU General Public License v3 (GPLv3)**. This ensures that the code remains free and open-source for everyone. See the [LICENSE](./LICENSE) file for details.
 
-## Contribution
+---
 
-This project is being developed by a team of four engineering students as part of a full-stack development initiative.
-
-## License
-
-This project is open-source and licensed under the MIT License.
+## **_Built to provide a secure bridge for data, ensuring privacy remains a right, not a privilege._**
