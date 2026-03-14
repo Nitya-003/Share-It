@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Delete test-upload.js",
+			"type": "shell",
+			"command": "del test-upload.js",
+			"args": [],
+			"isBackground": false
+		}
+	]
+}
