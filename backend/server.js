@@ -25,7 +25,6 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-// Example file upload route
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 

@@ -26,35 +26,21 @@ const adminMiddleware = (req, res, next) => {
 
 const mimeSniffingMiddleware = async (req, res, next) => {
   if (!req.file || !req.file.path) {
-    console.error('No file uploaded');
     return res.status(400).json({ error: 'No file uploaded' });
   }
 
   try {
-    console.log('Reading file from path:', req.file.path);
     const fileBuffer = fs.readFileSync(req.file.path);
-    console.log('File buffer length:', fileBuffer.length);
-
     const { fileTypeFromBuffer } = await import('file-type');
     const detectedType = await fileTypeFromBuffer(fileBuffer);
 
-    console.log('Detected MIME type:', detectedType);
-    console.log('Uploaded file MIME type:', req.file.mimetype);
-
-    if (!detectedType) {
-      console.error('Could not determine file type');
-      return res.status(400).json({ error: 'Could not determine file type' });
-    }
-
-    if (detectedType.mime !== req.file.mimetype) {
-      console.error(`MIME type mismatch: Detected (${detectedType.mime}) vs Uploaded (${req.file.mimetype})`);
-      return res.status(400).json({ error: 'Invalid file type detected' });
+    if (!detectedType || detectedType.mime !== req.file.mimetype) {
+      return res.status(400).json({ error: 'Invalid file type' });
     }
 
     next();
   } catch (error) {
-    console.error('Error during file type validation:', error);
-    res.status(500).json({ error: 'Error during file type validation' });
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
 
