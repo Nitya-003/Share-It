@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const { mimeSniffingMiddleware } = require('./middleware/auth');
 
 dotenv.config();
 
@@ -22,4 +23,12 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+
+// Example file upload route
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
+app.post('/upload', upload.single('file'), mimeSniffingMiddleware, (req, res) => {
+  res.json({ message: 'File uploaded and validated successfully' });
 });
