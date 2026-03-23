@@ -1,4 +1,4 @@
-# 📁 Share-IT: Secure File Sharing System
+# Share-IT: Secure File Sharing System
 
 ![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
@@ -13,44 +13,44 @@ Share-IT is a secure, scalable, and user-friendly full-stack web application for
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [🎯 Key Features](#-key-features)
-- [💡 Why Share-IT?](#-why-share-it)
-- [🛠️ Technology Stack](#%EF%B8%8F-technology-stack)
-- [🔄 System Architecture](#-system-architecture)
-- [📂 Project Structure](#-project-structure)
-- [⚡ Quick Start](#-quick-start)
+- [Key Features](#-key-features)
+- [Why Share-IT?](#-why-share-it)
+- [Technology Stack](#%EF%B8%8F-technology-stack)
+- [System Architecture](#-system-architecture)
+- [Project Structure](#-project-structure)
+- [Quick Start](#-quick-start)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Configuration](#configuration)
   - [Running the Application](#running-the-application)
-- [📖 Usage Guide](#-usage-guide)
-- [🔌 API Documentation](#-api-documentation)
-- [🧪 Testing](#-testing)
-- [🐛 Troubleshooting](#-troubleshooting)
-- [📝 Project Structure Details](#-project-structure-details)
-- [🚀 Deployment](#-deployment)
-- [🤝 Contributing](#-contributing)
-- [⚖️ License](#%EF%B8%8F-license)
+- [Usage Guide](#-usage-guide)
+- [API Documentation](#-api-documentation)
+- [Testing](#-testing)
+- [Troubleshooting](#-troubleshooting)
+- [Project Structure Details](#-project-structure-details)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#%EF%B8%8F-license)
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
 ### Core Functionality
-- **🔐 Secure Uploads** - Multi-format validation with configurable file size limits and virus scanning ready
-- **⏰ Time-Bound Links** - Automatic link expiration after a configurable duration (1 hour to 30 days)
-- **🛡️ Password Protection** - Optional AES-256 encryption with strong password requirements
-- **📊 Admin Dashboard** - Comprehensive analytics for file traffic, storage usage, and user activity
-- **🔑 JWT Authentication** - Secure token-based authentication for admin operations
-- **📱 Responsive Design** - Seamless experience across desktop, tablet, and mobile devices
-- **📥 Download Tracking** - Monitor who accessed and downloaded files with timestamps
-- **🗑️ Automatic Cleanup** - Expired files and their metadata automatically purged from the system
+- **Secure Uploads** - Multi-format validation with configurable file size limits and virus scanning ready
+- **Time-Bound Links** - Automatic link expiration after a configurable duration (1 hour to 30 days)
+- **Password Protection** - Optional AES-256 encryption with strong password requirements
+- **Admin Dashboard** - Comprehensive analytics for file traffic, storage usage, and user activity
+- **JWT Authentication** - Secure token-based authentication for admin operations
+- **Responsive Design** - Seamless experience across desktop, tablet, and mobile devices
+- **Download Tracking** - Monitor who accessed and downloaded files with timestamps
+- **Automatic Cleanup** - Expired files and their metadata automatically purged from the system
 
 ---
 
-## 💡 Why Share-IT?
+## Why Share-IT?
 
 In an era of sophisticated data breaches, relying on public cloud links or unencrypted email attachments is unacceptable. Share-IT addresses critical enterprise needs:
 
@@ -81,7 +81,7 @@ In an era of sophisticated data breaches, relying on public cloud links or unenc
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | **Category** | **Technologies** |
 |---|---|
@@ -95,7 +95,7 @@ In an era of sophisticated data breaches, relying on public cloud links or unenc
 
 ---
 
-## 🔄 System Architecture
+## System Architecture
 
 ```mermaid
 graph TD
@@ -122,7 +122,7 @@ graph TD
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Secure-File-Sharing-System/
@@ -188,7 +188,7 @@ Secure-File-Sharing-System/
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -202,7 +202,7 @@ Before you begin, ensure you have the following installed:
 
 **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/Secure-File-Sharing-System.git
+git clone https://github.com/Nitya-003/Secure-File-Sharing-System.git
 cd Secure-File-Sharing-System
 ```
 
@@ -303,7 +303,7 @@ Expected output:
 
 ---
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### For End Users
 
@@ -350,7 +350,7 @@ Expected output:
 
 ---
 
-## 🔌 API Documentation
+## API Documentation
 
 ### Base URL
 ```
@@ -418,11 +418,11 @@ curl http://localhost:5000/api/admin/files \
   -H "Authorization: Bearer TOKEN"
 ```
 
-For comprehensive API documentation, see [API_DOCS.md](./API_DOCS.md) (if available in repo).
+For comprehensive API documentation, see [API_DOCS.md](./API_DOCS.md).
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Backend Tests
 ```bash
@@ -443,7 +443,7 @@ npm test
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### MongoDB Connection Issues
 
@@ -513,7 +513,7 @@ PORT=5001
 
 ---
 
-## 📝 Project Structure Details
+## Project Structure Details
 
 For more detailed information about project organization and conventions, see:
 - [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) - Comprehensive structure documentation
@@ -522,7 +522,7 @@ For more detailed information about project organization and conventions, see:
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Docker Deployment
 
@@ -566,7 +566,7 @@ docker run -p 5173:5173 share-it-frontend
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions from developers of all skill levels! Whether it's bug fixes, feature additions, or documentation improvements, your help is valued.
 
@@ -601,40 +601,40 @@ git push origin feature/your-feature-name
 
 ### Areas We Need Help With
 
-- 🐛 Bug fixes and issue resolution
-- ✨ New features and enhancements
-- 📚 Documentation improvements
-- 🧪 Test coverage expansion
-- 🎨 UI/UX improvements
-- 🌍 Translation and internationalization
-- 🚀 Performance optimization
+- Bug fixes and issue resolution
+- New features and enhancements
+- Documentation improvements
+- Test coverage expansion
+- UI/UX improvements
+- Translation and internationalization
+- Performance optimization
 
 ---
 
-## ⚖️ License
+## License
 
 This project is licensed under the **GNU General Public License v3.0 (GPLv3)**.
 
 This ensures that:
-- ✅ The code remains free and open-source
-- ✅ Any modifications must be shared under the same license
-- ✅ Commercial use is permitted with proper attribution
-- ✅ Users have the freedom to study, modify, and distribute the code
+- The code remains free and open-source
+- Any modifications must be shared under the same license
+- Commercial use is permitted with proper attribution
+- Users have the freedom to study, modify, and distribute the code
 
 See the [LICENSE](./LICENSE) file for the complete legal text and terms.
 
 ---
 
-## 📞 Support & Community
+## Support & Community
 
-- **Issues & Bugs:** [GitHub Issues](https://github.com/yourusername/Secure-File-Sharing-System/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/yourusername/Secure-File-Sharing-System/discussions)
-- **Email Support:** contact@example.com
-- **Documentation:** [Wiki](https://github.com/yourusername/Secure-File-Sharing-System/wiki)
+- **Issues & Bugs:** [GitHub Issues](https://github.com/Nitya-003/Secure-File-Sharing-System/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/Nitya-003/Secure-File-Sharing-System/discussions)
+- **Email Support:** nityagosain@gmail.com
+- **Documentation:** [Wiki](https://github.com/Nitya-003/Secure-File-Sharing-System/wiki)
 
 ---
 
-## 🎓 Learning Resources
+## Learning Resources
 
 - [Node.js Documentation](https://nodejs.org/docs/)
 - [Express.js Guide](https://expressjs.com/)
@@ -644,7 +644,7 @@ See the [LICENSE](./LICENSE) file for the complete legal text and terms.
 
 ---
 
-## 🌟 Acknowledgments
+## Acknowledgments
 
 - Thanks to all contributors who have helped improve Share-IT
 - Special thanks to the open-source community for amazing libraries and tools
@@ -656,6 +656,6 @@ See the [LICENSE](./LICENSE) file for the complete legal text and terms.
 
 ### **_Built to provide a secure bridge for data, ensuring privacy remains a right, not a privilege._**
 
-**[Star us on GitHub](https://github.com/yourusername/Secure-File-Sharing-System) ⭐ • [Follow us on Twitter](https://twitter.com/yourhandle) 🐦 • [Support the Project](https://github.com/sponsors/yourusername) ❤️**
+**[Star us on GitHub](https://github.com/Nitya-003/Secure-File-Sharing-System) • [Follow us on Twitter](https://twitter.com/yourhandle) 🐦 • [Support the Project](https://github.com/sponsors/yourusername) ❤️**
 
 </div>
