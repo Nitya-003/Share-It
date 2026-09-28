@@ -630,17 +630,6 @@ See the [LICENSE](./LICENSE) file for the complete legal text and terms.
 - **Issues & Bugs:** [GitHub Issues](https://github.com/Nitya-003/Secure-File-Sharing-System/issues)
 - **Discussions:** [GitHub Discussions](https://github.com/Nitya-003/Secure-File-Sharing-System/discussions)
 - **Email Support:** nityagosain@gmail.com
-- **Documentation:** [Wiki](https://github.com/Nitya-003/Secure-File-Sharing-System/wiki)
-
----
-
-## Learning Resources
-
-- [Node.js Documentation](https://nodejs.org/docs/)
-- [Express.js Guide](https://expressjs.com/)
-- [MongoDB Manual](https://docs.mongodb.com/manual/)
-- [React Documentation](https://react.dev/)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 
 ---
 
